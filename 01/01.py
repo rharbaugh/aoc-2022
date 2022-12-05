@@ -1,13 +1,12 @@
-file = open('input', 'r')
-lines = file.readlines()
+with open('input') as f:
+    lines = f.read().splitlines()
 
 elves = []
 calories = 0
 
 for line in lines:
-    clean = line.replace('\n', '')
-    if clean.isdigit():
-        calories += int(clean)
+    if line.isdigit():
+        calories += int(line)
     else:
         elves.append(calories)
         calories = 0

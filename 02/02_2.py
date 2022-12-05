@@ -28,13 +28,12 @@ def calculate_draw(move):
             return 6
 
 
-file = open('input', 'r')
-lines = file.readlines()
+with open('input') as f:
+    lines = f.read().splitlines()
 score = 0
 
 for line in lines:
-    clean = line.replace('\n', '')
-    moves = clean.split(" ")
+    moves = line.split(" ")
     theirs = moves[0]
     ours = moves[1]
 
